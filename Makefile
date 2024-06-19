@@ -1,5 +1,9 @@
 ALL := $(HOME)/.zshrc $(HOME)/.gitconfig zsh
 
+$(HOME)/.tmux.conf:
+	ln -s $(shell readlink -f .tmux.conf) $(HOME)/.tmux.conf
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 $(HOME)/.zshrc:
 	ln -s $(shell readlink -f .zshrc) $(HOME)/.zshrc
 
